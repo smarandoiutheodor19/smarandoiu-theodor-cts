@@ -6,8 +6,8 @@ import java.util.List;
 public class Program {
 
 	public static void main(String[] args) {
-		List<Aplicant> listaAngajati;
-		Reader reader = new AngajatiReader();
+		List<cts.seminar2.Aplicant> listaAngajati;
+		cts.seminar2.Reader reader = new cts.seminar2.AngajatiReader("angajati.txt");
 		try {
 			listaAngajati = reader.readAplicanti("angajati.txt");
 			for(Aplicant angajat:listaAngajati)

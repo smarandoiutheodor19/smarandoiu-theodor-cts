@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Angajat extends Aplicant{
 	private String ocupatie;
-	private int salariu;
+	private Integer salariu;
 	
 	public String getOcupatie() {
 		return ocupatie;
@@ -15,10 +15,10 @@ public class Angajat extends Aplicant{
 	public int getSalariu() {
 		return salariu;
 	}
-	public void setSalariu(int salariu) {
+	public void setSalariu(Integer salariu) {
 		this.salariu = salariu;
 	}
-	public Angajat(String nume, String prenume, int varsta, int punctaj, int nrProiecte, String[] denumireProiecte,int salariu,String ocupatie) {
+	public Angajat(String nume, String prenume, Integer varsta, Integer punctaj, Integer nrProiecte, String[] denumireProiecte,Integer salariu, String ocupatie) {
 		super(nume,prenume,varsta,punctaj,nrProiecte,denumireProiecte);
 		this.salariu = salariu;
 		this.ocupatie = ocupatie;
@@ -28,11 +28,8 @@ public class Angajat extends Aplicant{
 		
 	}
 	
-	
 	@Override
 	public String toString() {
-		return "Angajat: Nume=" + nume + ", Prenume=" + prenume
-				+ ", Varsta=" + varsta + ", Punctaj=" + punctaj + ", Nr_proiecte=" + nrProiecte + ", DenumireProiect="
-				+ Arrays.toString(denumireProiect) + "Ocupatie=" + ocupatie + ", salariu=" + salariu;
+		return "Angajat: " +  super.toString() + ", Ocupatie=" + ocupatie + ", Salariu=" + salariu;
 	}
 }

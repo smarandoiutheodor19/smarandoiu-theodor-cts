@@ -1,8 +1,20 @@
 package cts.seminar2;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public abstract class AplicantReader implements Reader{
+	Scanner scanner;
+	
+	public AplicantReader(String numeFisier) {
+		try {
+			scanner = new Scanner(new File(numeFisier));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
     public void readAplicant(Scanner scanner, Aplicant aplicant){
         String nume = scanner.next();
         String prenume = scanner.next();
@@ -18,4 +30,5 @@ public abstract class AplicantReader implements Reader{
         aplicant.setPunctaj(punctaj);
         aplicant.setDenumireProiect(nr, vect);
     }
+    
 }

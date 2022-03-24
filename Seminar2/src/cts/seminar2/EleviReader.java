@@ -7,22 +7,26 @@ import java.util.List;
 import java.util.Scanner;
 
 public class EleviReader extends AplicantReader {
-    @Override
+    public EleviReader(String numeFisier) {
+		super(numeFisier);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
     public List<Aplicant> readAplicanti(String file) throws FileNotFoundException {
-        Scanner input2 = new Scanner(new File(file));
-        input2.useDelimiter(",|\n");
+		super.scanner.useDelimiter(",|\n");
         List<Aplicant> elevi = new ArrayList<>();
 
-        while (input2.hasNext()) {
+        while (super.scanner.hasNext()) {
             Elev elev = new Elev();
-            int clasa = input2.nextInt();
-            String tutore = input2.next();
+            int clasa = super.scanner.nextInt();
+            String tutore = super.scanner.next();
             elev.setClasa(clasa);
             elev.setTutore(tutore);
             elevi.add(elev);
         }
 
-        input2.close();
+        super.scanner.close();
         return elevi;
     }
 }
